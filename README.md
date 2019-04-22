@@ -1,14 +1,14 @@
 # DataPersistenceDemo
-iOS数据持久化
+# iOS数据持久化（记录）
 
 ## 1.plist文件
-### 即属性列表文件，全名是Property List，这种文件的扩展名为.plist，因此，通常被叫做plist文件。它是一种用来存储串行化后的对象的文件，用于存储程序中经常用到且数据量小而不经常改动的数据。
+即属性列表文件，全名是Property List，这种文件的扩展名为.plist，因此，通常被叫做plist文件。它是一种用来存储串行化后的对象的文件，用于存储程序中经常用到且数据量小而不经常改动的数据。
 
-### 可以存储的类型:NSNumber，NSString，NSDate，NSData ,NSArray，NSDictionary，BOOL.
+可以存储的类型:NSNumber，NSString，NSDate，NSData ,NSArray，NSDictionary，BOOL.
 
-### 不支持自定义对象的存储.
+不支持自定义对象的存储.
 
-### plist的创建方式有两种:command + n 创建和纯代码创建,不同的创建方式使用方法也自然不同。
+plist的创建方式有两种:command + n 创建和纯代码创建,不同的创建方式使用方法也自然不同。
 
 command + n 创建:
 ````
@@ -52,24 +52,26 @@ command + n 创建:
     与command+n方法相同.
 ````
 
-### 需要注意的问题：如果需要存储自定义类型的数据需要先进行序列化。
+需要注意的问题：如果需要存储自定义类型的数据需要先进行序列化。
 
 
 
 
-
+##
+##
+##
 ## 2.NSUserDefaults
-### 用于存储用户的偏好设置、用户信息（如用户名、是否自动登录、字体大小等）。
+用于存储用户的偏好设置、用户信息（如用户名、是否自动登录、字体大小等）。
 
-### 数据自动保存在沙盒的Libarary/Preferences 目录下。
+数据自动保存在沙盒的Libarary/Preferences 目录下。
 
-### NSUserDefaults将输入的数据储存在.plist格式的文件下，这种存储方式就决定了它的安全性几乎为0，所以不建议存储一些敏感信息如:用户密码、token、加密私钥等。
+NSUserDefaults将输入的数据储存在.plist格式的文件下，这种存储方式就决定了它的安全性几乎为0，所以不建议存储一些敏感信息如:用户密码、token、加密私钥等。
 
-### 它能存储的数据类型为：NSNumber（NSInteger、float、double、BOOL），NSString，NSDate，NSArray，NSDictionary，NSData。
+它能存储的数据类型为：NSNumber（NSInteger、float、double、BOOL），NSString，NSDate，NSArray，NSDictionary，NSData。
 
-### 不支持自定义对象的存储.
+不支持自定义对象的存储.
 
-### 需要注意的问题:
+需要注意的问题:
 1.NSUserDefaults存储的数据都是不可变的，想将可变数据存入需要先转为不可变才可以存储。
 
 2.NSUserDefaults是定时把缓存中的数据写入磁盘的，而不是即时写入，为了防止在写完NSUserDefaults后程序退出导致的数据丢失，可以在写入数据后使用synchronize强制立即将数据写入磁盘。
@@ -88,9 +90,9 @@ BOOL myBool = [userDefault boolForKey:@"BOOl"];
 ````
 
 
-
-
-
+##
+##
+##
 ## 3.钥匙串（keychain）
 
 
